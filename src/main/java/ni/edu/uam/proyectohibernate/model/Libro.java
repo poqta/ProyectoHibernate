@@ -22,12 +22,12 @@ public class Libro {
     private int anioPublicacion;
 
     @Column(name = "precio", nullable = false, precision = 10, scale = 2)
-    private String precio;
+    private double precio;
 
     public Libro() {
     }
 
-    public Libro(long id, String titulo, String autor, int anioPublicacion, String precio) {
+    public Libro(long id, String titulo, String autor, int anioPublicacion, double precio) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
@@ -67,11 +67,11 @@ public class Libro {
         this.anioPublicacion = anioPublicacion;
     }
 
-    public String getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(String precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 }
