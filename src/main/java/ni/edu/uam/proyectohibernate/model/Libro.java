@@ -4,6 +4,8 @@ package ni.edu.uam.proyectohibernate.model;
 import jakarta.persistence.*;
 import jakarta.persistence.Table;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "libro", schema = "catalogos")
 public class Libro {
@@ -22,12 +24,12 @@ public class Libro {
     private int anioPublicacion;
 
     @Column(name = "precio", nullable = false, precision = 10, scale = 2)
-    private double precio;
+    private BigDecimal precio;
 
     public Libro() {
     }
 
-    public Libro(long id, String titulo, String autor, int anioPublicacion, double precio) {
+    public Libro(long id, String titulo, String autor, int anioPublicacion, BigDecimal precio) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
@@ -67,11 +69,11 @@ public class Libro {
         this.anioPublicacion = anioPublicacion;
     }
 
-    public double getPrecio() {
+    public BigDecimal getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(BigDecimal precio) {
         this.precio = precio;
     }
 }

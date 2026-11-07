@@ -19,7 +19,7 @@ public class JPAUtil {
             }
             Map<String, Object> propiedades = new HashMap<>();
             propiedades.put("jakarta.persistence.jdbc.password", password);
-            entityManagerFactory = Persistence.createEntityManagerFactory("biblioteca", propiedades);
+            entityManagerFactory = Persistence.createEntityManagerFactory("bibliotecaPU", propiedades);
         }
 
     }
