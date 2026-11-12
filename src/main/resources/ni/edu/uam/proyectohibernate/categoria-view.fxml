@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="692.0" prefWidth="792.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.proyectohibernate.controller.CategoriaController">
+
+    <children>
+
+
+        <Label layoutX="215.0" layoutY="16.0" text="Gestión de Categorías" textFill="#334155">
+            <font>
+                <Font name="Palatino Linotype Bold" size="36.0" />
+            </font>
+        </Label>
+
+        <AnchorPane layoutX="35.0" layoutY="69.0" prefHeight="317.0" prefWidth="734.0" style="-fx-background-color: white;                            -fx-background-radius: 15;                            -fx-border-color: #E2E8F0;                            -fx-border-radius: 15;">
+
+            <children>
+
+                <Label layoutX="34.0" layoutY="56.0" text="ID" textFill="#475569">
+               <font>
+                  <Font name="Palatino Linotype" size="14.0" />
+               </font></Label>
+
+                <TextField fx:id="txtId" editable="false" layoutX="30.0" layoutY="85.0" prefHeight="35.0" prefWidth="256.0" promptText="Automático" style="-fx-background-radius: 8;" />
+
+                <Label layoutX="313.0" layoutY="56.0" text="Nombre" textFill="#475569">
+               <font>
+                  <Font name="Palatino Linotype" size="14.0" />
+               </font></Label>
+
+                <TextField fx:id="txtNombre" layoutX="310.0" layoutY="85.0" prefHeight="35.0" prefWidth="350.0" promptText="Ingrese el nombre de la categoría" style="-fx-background-radius: 8;" />
+
+                <Button fx:id="btnGuardar" layoutX="14.0" layoutY="259.0" onAction="#guardarCategoria" prefHeight="38.0" prefWidth="150.0" style="-fx-background-color: #BBF7D0;                                -fx-text-fill: #166534;                                -fx-background-radius: 10;                                -fx-font-weight: bold;                                -fx-cursor: hand;" text="Guardar" />
+
+
+                <Button fx:id="btnModificar" layoutX="189.0" layoutY="259.0" onAction="#modificarCategoria" prefHeight="38.0" prefWidth="150.0" style="-fx-background-color: #FDE68A;                                -fx-text-fill: #92400E;                                -fx-background-radius: 10;                                -fx-font-weight: bold;                                -fx-cursor: hand;" text="Modificar" />
+                <Button fx:id="btnEliminar" layoutX="367.0" layoutY="259.0" onAction="#eliminarCategoria" prefHeight="38.0" prefWidth="150.0" style="-fx-background-color: #FBCFE8;                                -fx-text-fill: #9D174D;                                -fx-background-radius: 10;                                -fx-font-weight: bold;                                -fx-cursor: hand;" text="Eliminar" />
+
+
+                <Button fx:id="btnLimpiar" layoutX="533.0" layoutY="259.0" onAction="#limpiarCampos" prefHeight="38.0" prefWidth="150.0" style="-fx-background-color: #DDD6FE;                                -fx-text-fill: #5B21B6;                                -fx-background-radius: 10;                                -fx-font-weight: bold;                                -fx-cursor: hand;" text="Limpiar" />
+            <Label layoutX="25.0" layoutY="14.0" text="Información de la categoría">
+               <font>
+                  <Font name="Palatino Linotype Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="144.0" text="Descripción">
+               <font>
+                  <Font name="Palatino Linotype" size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txtDescripcion" layoutX="25.0" layoutY="168.0" prefHeight="73.0" prefWidth="636.0" promptText="Ingrese una descripción" style="-fx-background-radius: 8;" />
+
+            </children>
+        </AnchorPane>
+
+        <AnchorPane layoutX="35.0" layoutY="397.0" prefHeight="282.0" prefWidth="734.0" style="-fx-background-color: white;                            -fx-background-radius: 15;                            -fx-border-color: #E2E8F0;                            -fx-border-radius: 15;">
+
+            <children>
+
+                <Label layoutX="25.0" layoutY="15.0" text="Categorías registradas" textFill="#334155">
+                    <font>
+                        <Font name="Palatino Linotype Bold" size="17.0" />
+                    </font>
+                </Label>
+            <TableView fx:id="tblCategorias" layoutX="14.0" layoutY="53.0" prefHeight="200.0" prefWidth="702.0">
+              <columns>
+                <TableColumn fx:id="colId" prefWidth="148.0" text="Id" />
+                <TableColumn fx:id="colNombre" prefWidth="264.0" text="Nombre" />
+                  <TableColumn fx:id="colDescripcion" prefWidth="289.0" text="Descripción" />
+              </columns>
+            </TableView>
+
+            </children>
+        </AnchorPane>
+
+    </children>
+
+</AnchorPane>
