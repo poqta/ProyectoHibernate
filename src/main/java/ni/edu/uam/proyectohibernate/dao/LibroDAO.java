@@ -3,17 +3,27 @@ package ni.edu.uam.proyectohibernate.dao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import ni.edu.uam.proyectohibernate.database.JPAUtil;
+import ni.edu.uam.proyectohibernate.model.Categoria;
 import ni.edu.uam.proyectohibernate.model.Libro;
 
 import java.util.List;
 
 public class LibroDAO {
 
+    private Categoria obtenerCategoria(EntityManager em, Libro libro) {
+        Long categoriaId = libro.getCategoria().getId();
+        Categoria categoria = em.find(Categoria.class, categoriaId);
+        return categoria;
+    }
+
     public void guardar(Libro libro){
         EntityManager em = JPAUtil.getEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
+            // Nuevo
+            Categoria categoria = obtenerCategoria(em, libro);
+            libro.setCategoria(categoria);
             em.persist(libro);
             tx.commit();
         } catch (RuntimeException e){

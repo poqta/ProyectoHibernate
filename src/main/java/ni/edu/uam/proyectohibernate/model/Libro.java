@@ -26,10 +26,24 @@ public class Libro {
     @Column(name = "precio", nullable = false, precision = 10, scale = 2)
     private BigDecimal precio;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
+
     public Libro() {
     }
 
-    public Libro(long id, String titulo, String autor, int anioPublicacion, BigDecimal precio) {
+    public Libro(long id, String titulo, String autor, int anioPublicacion, BigDecimal precio, Categoria categoria) {
+        this.id = id;
+        this.titulo = titulo;
+        this.autor = autor;
+        this.anioPublicacion = anioPublicacion;
+        this.precio = precio;
+        this.categoria = categoria;
+    }
+    // Constructor para libros sin categoría especificada
+    public Libro(long id, String titulo, String autor,
+                 int anioPublicacion, BigDecimal precio) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
@@ -75,5 +89,13 @@ public class Libro {
 
     public void setPrecio(BigDecimal precio) {
         this.precio = precio;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }
